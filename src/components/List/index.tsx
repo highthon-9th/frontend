@@ -4,10 +4,12 @@ import { TIME_DATA_LIST2 } from "../pages/SelectTime";
 import YearBox from "../common/YearBox";
 import ListItem from "./ListItem";
 import BottomNavigation from "../common/BottomNavigation";
+import AddButton from "../common/AddButton";
+import { useNavigate } from "react-router-dom";
 
 const List = () => {
   const [yearData, setYearData] = useState(2020);
-
+  const navigate = useNavigate();
   return (
     <Container>
       <Box>
@@ -27,6 +29,7 @@ const List = () => {
         </Wrap>
       </Box>
       <ListItem date={yearData} />
+      <AddButton navigate={() => navigate("/작성하는주소")} />
       <BottomNavigation />
     </Container>
   );
