@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { TIME_DATA_LIST2 } from "../pages/SelectTime";
 import YearBox from "../common/YearBox";
 import ListItem from "./ListItem";
+import BottomNavigation from "../common/BottomNavigation";
 
 const List = () => {
   const [yearData, setYearData] = useState(2020);
@@ -26,6 +27,7 @@ const List = () => {
         </Wrap>
       </Box>
       <ListItem date={yearData} />
+      <BottomNavigation />
     </Container>
   );
 };
@@ -35,6 +37,9 @@ export default List;
 const Box = styled.div`
   width: 100%;
   overflow-x: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const Wrap = styled.div`
   display: flex;
