@@ -21,9 +21,8 @@ const Router = () => {
       <Route path="/test" element={<Test />} />
       <Route path="/select-time" element={<SelectTime />} />
       <Route path="/create" element={<Create />} />
-      <Route path="/bbibbi" element={<BbiBbi />} />
       <Route path="/bbibbi" element={<BBiBBi />} />
-      <Route path="bbibbiform" element={<BBiBBiForm />} />
+      <Route path="/bbibbiform" element={<BbiBbi />} />
       <Route path="/bbibbi/detail/:id" element={<BBiBBiDetail />} />
     </Routes>
   );

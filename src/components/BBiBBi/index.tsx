@@ -15,9 +15,11 @@ const BBiBBi = () => {
         <BBiBBiListContainer>
           <BBiBBiItem></BBiBBiItem>
         </BBiBBiListContainer>
-        <AddButton navigate={() => navigate("/bbibbiform")} />
-        <BottomNavigation />
+        <AddButton
+          navigate={() => navigate("/bbibbiform?timeCapsuleQuery=create")}
+        />
       </Container>
+      <BottomNavigation />
     </>
   );
 };
@@ -26,7 +28,7 @@ export default BBiBBi;
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 42px);
   padding-left: 20px;
   padding-right: 20px;
 
