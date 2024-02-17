@@ -17,7 +17,7 @@ const ListItem = ({ date }: Props) => {
         <ListContainer>
           <UserName>{data.writerName}</UserName>
           <Content>{data.content}</Content>
-          <ListImage alt="" src={data.imageUrl} />
+          {data.imageUrl !== "" && <ListImage alt="" src={data.imageUrl} />}
           <Flex>
             <FaRegHeart style={{ cursor: "pointer" }} />
             <LikeCount>{data.likeCount}</LikeCount>
