@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
+import { createGlobalStyle, styled } from "styled-components";
 
-interface Props {
+interface IFLayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: IFLayoutProps) => {
   return <div>{children}</div>;
 };
 
