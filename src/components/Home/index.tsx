@@ -1,27 +1,60 @@
-import { useState } from "react";
-import TopNavigation from "../common/TopNavigation";
+import { useNavigate } from "react-router-dom";
+import { styled } from "styled-components";
 
-const Home = () => {
-  const [section, setSection] = useState(0);
+export const AuthBlackButton = styled.div`
+  width: 358px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
 
-  const nextPage = () => {
-    setSection(1);
-  };
+  cursor: pointer;
+  border-radius: 10px;
+`;
 
-  const prevPage = () => {
-    setSection(0);
-  };
-  const onClick = () => {
-    console.log("onclick");
-  };
+export const AuthWhiteButton = styled.div`
+  width: 358px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+  border-radius: 10px;
+`;
+
+const Auth = () => {
+  const navigate = useNavigate();
   return (
-    <TopNavigation
-      section={section}
-      nextPage={nextPage}
-      prevPage={prevPage}
-      onClick={onClick}
-    />
+    <Container>
+      <Wrap>
+        <AuthBlackButton onClick={() => navigate("/signup")}>
+          무료로 회원가입
+        </AuthBlackButton>
+        <AuthWhiteButton onClick={() => navigate("/signin")}>
+          로그인
+        </AuthWhiteButton>
+      </Wrap>
+    </Container>
   );
 };
 
-export default Home;
+export default Auth;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  row-gap: 12px;
+`;
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+`;
