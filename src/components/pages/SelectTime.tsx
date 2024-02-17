@@ -15,7 +15,7 @@ const SelectTime = () => {
   };
 
   const handleNextPage = () => {
-    navigate(`/create?time=${selectTime}`);
+    navigate(`/create?time=${selectTime}&createQuery=create`);
   };
 
   const handleSelectTime = (time: number) => {
