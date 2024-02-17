@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-  width: 390px;
+  width: 100%;
   height: 42px;
   background-color: #ffffff;
 
@@ -10,12 +10,11 @@ export const Container = styled.div`
   align-items: center;
 
   padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 24px;
 `;
 
-export const Text = styled.p<{ section: number }>`
+export const Text = styled.p`
+  font-size: 16px;
   font-weight: bold;
   color: #c3c3c3;
-
-  color: ${({ section }) => section === 1 && "#42BC86"};
 `;
