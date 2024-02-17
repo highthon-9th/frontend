@@ -7,6 +7,9 @@ import Test from "../pages/Test";
 import SelectTime from "../pages/SelectTime";
 import Create from "../pages/Create";
 import BbiBbi from "../pages/BbiBbi";
+import BBiBBi from "../BBiBBi";
+import BBiBBiForm from "../BBiBBi/BBiBBiForm";
+import BBiBBiDetail from "../BBiBBi/BBiBBiDetail";
 
 const Router = () => {
   return (
@@ -19,6 +22,9 @@ const Router = () => {
       <Route path="/select-time" element={<SelectTime />} />
       <Route path="/create" element={<Create />} />
       <Route path="/bbibbi" element={<BbiBbi />} />
+      <Route path="/bbibbi" element={<BBiBBi />} />
+      <Route path="bbibbiform" element={<BBiBBiForm />} />
+      <Route path="/bbibbi/detail/:id" element={<BBiBBiDetail />} />
     </Routes>
   );
 };

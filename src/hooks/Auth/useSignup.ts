@@ -1,10 +1,12 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useSignupMutation } from "../../query/auth/query";
 import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
+  const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
   const signupMutation = useSignupMutation();
+
   const [signupData, setSignupData] = useState({
     name: "",
     email: "",
@@ -20,10 +22,14 @@ export const useSignup = () => {
     signupMutation.mutate(signupData, {
       onSuccess: (data) => {
         localStorage.setItem("userId", data);
-        navigate("/list");
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+          navigate("/list");
+        }, 2000);
       },
     });
   };
 
-  return { signupData, onChangeSignupData, onSubmitSignupData };
+  return { success, signupData, onChangeSignupData, onSubmitSignupData };
 };
