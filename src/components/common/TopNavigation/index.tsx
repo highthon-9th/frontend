@@ -2,12 +2,12 @@ import { Container, Text } from "./style";
 import LeftArrowIcon from "../../../assets/LeftArrowIcon";
 
 interface IFTopNavigationProps {
-  section: number;
+  section?: number;
   prevPage: () => void;
-  nextPage: () => void;
+  nextPage?: () => void;
   title?: string;
   configText?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const TopNavigation = ({
@@ -21,9 +21,11 @@ const TopNavigation = ({
     <Container>
       <LeftArrowIcon onClick={prevPage} />
       {title}
-      <Text onClick={onClick} section={section}>
-        {configText}
-      </Text>
+      {configText && section && (
+        <Text onClick={onClick} section={section}>
+          {configText}
+        </Text>
+      )}
     </Container>
   );
 };
