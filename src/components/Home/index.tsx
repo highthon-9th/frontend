@@ -11,15 +11,15 @@ const Home = () => {
   const prevPage = () => {
     setSection(0);
   };
-  const onSubmit = () => {
-    console.log("제출 하기 함수");
+  const onClick = () => {
+    console.log("onclick");
   };
   return (
     <TopNavigation
       section={section}
       nextPage={nextPage}
       prevPage={prevPage}
-      onSubmit={onSubmit}
+      onClick={onClick}
     />
   );
 };

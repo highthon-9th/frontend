@@ -5,23 +5,24 @@ interface IFTopNavigationProps {
   section: number;
   prevPage: () => void;
   nextPage: () => void;
-  onSubmit: () => void;
-  children?: string;
+  title?: string;
+  configText?: string;
+  onClick: () => void;
 }
 
 const TopNavigation = ({
-  nextPage,
   prevPage,
-  children,
+  title,
   section,
-  onSubmit,
+  configText,
+  onClick,
 }: IFTopNavigationProps) => {
   return (
     <Container>
       <LeftArrowIcon onClick={prevPage} />
-      {children}
-      <Text onClick={section === 0 ? nextPage : onSubmit} section={section}>
-        {section === 0 ? "다음으로" : "게시하기"}
+      {title}
+      <Text onClick={onClick} section={section}>
+        {configText}
       </Text>
     </Container>
   );
