@@ -38,7 +38,7 @@ const Flex = styled.div`
 `;
 
 const ListImage = styled.img`
-  width: 100%;
+  width: 358px;
   height: 142px;
   border-radius: 21px;
 `;

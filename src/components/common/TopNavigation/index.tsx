@@ -6,20 +6,20 @@ interface IFTopNavigationProps {
   prevPage: () => void;
   title?: string;
   configText?: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const TopNavigation = ({
   prevPage,
   title,
-  configText = "다음으로",
+  configText,
   onClick,
 }: IFTopNavigationProps) => {
   return (
     <Container>
       <LeftArrowIcon onClick={prevPage} />
       {title}
-      <Text onClick={onClick}>{configText}</Text>
+      {configText && <Text onClick={onClick}>{configText}</Text>}
     </Container>
   );
 };
