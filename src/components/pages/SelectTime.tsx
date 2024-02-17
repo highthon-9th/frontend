@@ -3,7 +3,12 @@ import styled from "styled-components";
 import TopNavigation from "../common/TopNavigation";
 import { useState } from "react";
 
-const TIME_DATA_LIST = [1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020];
+export const TIME_DATA_LIST = [
+  1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020,
+];
+export const TIME_DATA_LIST2 = [
+  2020, 2015, 2010, 2005, 2000, 1995, 1990, 1985, 1980,
+];
 
 const SelectTime = () => {
   const [selectTime, setSelectTime] = useState<number>(2020);
