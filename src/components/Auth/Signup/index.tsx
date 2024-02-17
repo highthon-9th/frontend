@@ -4,13 +4,17 @@ import { useNavigate } from "react-router-dom";
 import TextInput from "../../common/TextInput";
 import { AuthBlackButton } from "../../Home";
 import { useSignup } from "../../../hooks/Auth/useSignup";
+import { log } from "console";
 
 const Signup = () => {
   const navigate = useNavigate();
   const { onChangeSignupData, onSubmitSignupData } = useSignup();
   return (
     <>
-      <TopNavigation prevPage={() => navigate("/")} />
+      <TopNavigation
+        prevPage={() => navigate("/")}
+        onClick={() => console.log("uii")}
+      />
       <Container>
         <Wrap>
           <Title>아이디를 입력해주세요</Title>

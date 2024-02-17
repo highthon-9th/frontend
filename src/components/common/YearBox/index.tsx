@@ -3,12 +3,13 @@ import { css, styled } from "styled-components";
 interface IFYearBoxProps {
   onClick: () => void;
   isSelect: boolean;
+  year: number;
 }
 
-const YearBox = ({ onClick, isSelect }: IFYearBoxProps) => {
+const YearBox = ({ onClick, isSelect, year }: IFYearBoxProps) => {
   return (
     <Box onClick={onClick} isSelect={isSelect}>
-      YearBox
+      {year}
     </Box>
   );
 };
@@ -20,8 +21,9 @@ const Box = styled.div<{ isSelect: boolean }>`
   justify-content: center;
   align-items: center;
 
-  width: 67px;
+  min-width: 67px;
   height: 35px;
+  border-radius: 30px;
 
   cursor: pointer;
   ${({ isSelect }) =>
@@ -35,6 +37,5 @@ const Box = styled.div<{ isSelect: boolean }>`
           background-color: #ffffff;
           color: #2dd790;
           border: 1px solid #c3c3c3;
-          border: none;
         `}
 `;
