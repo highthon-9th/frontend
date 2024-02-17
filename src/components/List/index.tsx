@@ -29,7 +29,7 @@ const List = () => {
         </Wrap>
       </Box>
       <ListItem date={yearData} />
-      <AddButton navigate={() => navigate("/작성하는주소")} />
+      <AddButton navigate={() => navigate("/select-time")} />
       <BottomNavigation />
     </Container>
   );
