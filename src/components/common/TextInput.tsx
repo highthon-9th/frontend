@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 
 interface IFTextInputProps {
   inputInfo?: string;
-  name: string;
+  name?: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
