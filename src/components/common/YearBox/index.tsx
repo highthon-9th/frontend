@@ -29,13 +29,13 @@ const Box = styled.div<{ isSelect: boolean }>`
   ${({ isSelect }) =>
     isSelect
       ? css`
-          background-color: #2dd790;
+          background-color: #ff8127;
           color: #ffffff;
           border: none;
         `
       : css`
           background-color: #ffffff;
-          color: #2dd790;
+          color: #ff8127;
           border: 1px solid #c3c3c3;
         `}
 `;
