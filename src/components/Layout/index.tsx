@@ -1,12 +1,18 @@
 import { ReactNode } from "react";
-import { createGlobalStyle, styled } from "styled-components";
+import { styled } from "styled-components";
 
 interface IFLayoutProps {
   children: ReactNode;
 }
 
 const Layout = ({ children }: IFLayoutProps) => {
-  return <div>{children}</div>;
+  return <Container>{children}</Container>;
 };
 
 export default Layout;
+
+const Container = styled.div`
+  width: 100%;
+
+  height: 100vh;
+`;
