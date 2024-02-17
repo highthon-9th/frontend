@@ -5,6 +5,7 @@ import Signup from "../Auth/Signup";
 import List from "../List";
 import BBiBBi from "../BBiBBi";
 import BBiBBiForm from "../BBiBBi/BBiBBiForm";
+import BBiBBiDetail from "../BBiBBi/BBiBBiDetail";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
       <Route path="/Signup" element={<Signup />} />
       <Route path="/list" element={<List />} />
       <Route path="/bbibbi" element={<BBiBBi />} />
+      <Route path="/bbibbi/detail/:id" element={<BBiBBiDetail />} />
     </Routes>
   );
 };
