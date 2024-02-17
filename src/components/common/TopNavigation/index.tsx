@@ -1,31 +1,25 @@
 import { Container, Text } from "./style";
 import LeftArrowIcon from "../../../assets/LeftArrowIcon";
+import { ReactNode } from "react";
 
 interface IFTopNavigationProps {
-  section?: number;
   prevPage: () => void;
-  nextPage?: () => void;
   title?: string;
-  configText?: string;
-  onClick?: () => void;
+  configText?: ReactNode;
+  onClick: () => void;
 }
 
 const TopNavigation = ({
   prevPage,
   title,
-  section,
-  configText,
+  configText = "다음으로",
   onClick,
 }: IFTopNavigationProps) => {
   return (
     <Container>
       <LeftArrowIcon onClick={prevPage} />
       {title}
-      {configText && section && (
-        <Text onClick={onClick} section={section}>
-          {configText}
-        </Text>
-      )}
+      <Text onClick={onClick}>{configText}</Text>
     </Container>
   );
 };
