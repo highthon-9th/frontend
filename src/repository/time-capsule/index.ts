@@ -8,7 +8,7 @@ export const getTimeCapsuleById = async (id: number) => {
 
 export const getTimeCapsule = async (userId: number) => {
   const { data } = await instance.get<TimeCapsules[]>(
-    `/time-capsule/${userId}`
+    `/time-capsule/user/${userId}`
   );
   return data;
 };
