@@ -31,7 +31,7 @@ const CreateBbiBbi = ({ setTimeCapsule, timeCapsule }: IFCreateBbiBbiProps) => {
   };
 
   const handleViewPost = () => {
-    navigate("/bbibbi?timeCapsuleQuery=time");
+    navigate("/bbibbiform?timeCapsuleQuery=time");
   };
 
   const handleDeleteImage = () => {
