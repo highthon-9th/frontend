@@ -75,7 +75,7 @@ const BBiBBiItem = styled.div<{ url: string }>`
   padding-top: 72px;
   border-radius: 10px;
   border: 1px solid black;
-  background-image: url(url);
+  background-image: url(${(props) => props.url});
 `;
 
 const CreateTime = styled.p`
