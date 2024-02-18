@@ -95,7 +95,7 @@ const StyledWrapper = styled.div`
   }
 
   #timePage_title span:first-child {
-    color: #2dd790;
+    color: #ff8127;
   }
 
   #timePage_title span:last-child {
@@ -125,13 +125,13 @@ const TimeButton = styled.button`
   border-radius: 6px;
 
   &[data-is-select="true"] {
-    background-color: #2dd790;
+    background-color: #ff8127;
     color: #fff;
   }
 `;
 
 const CustomConfirmText = styled.span`
   &[data-is-select] {
-    color: #2dd790;
+    color: #c3c3c3;
   }
 `;
