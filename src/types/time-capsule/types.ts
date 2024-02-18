@@ -10,4 +10,5 @@ export interface TimeCapsules {
   thumbnailImage: string;
   createdAt: string;
   closeAt: string;
+  id: number;
 }

@@ -19,13 +19,16 @@ const BBiBBi = () => {
         <Title>미래의 나에게 삐삐를 보내보세요</Title>
         <BBiBBiListContainer>
           {data?.map((data) => (
-            <BBiBBiItem url={data.thumbnailImage}>
+            <BBiBBiItem
+              url={data.thumbnailImage}
+              onClick={() => navigate(`/bbibbi/detail/${data.id}`)}
+            >
               <CreateTime>
                 {dayjs(data.createdAt).format("YYYY년 MM월 DD일")}
               </CreateTime>
               <BBiBBiTitle>{data.title}</BBiBBiTitle>
               <Time>
-                남은시간 <br /> {dayjs(data.closeAt).format("YYYY년 MM월 DD일")}
+                남은시간 <br /> 3일 23시간 39분
               </Time>
             </BBiBBiItem>
           ))}
@@ -66,6 +69,8 @@ const BBiBBiListContainer = styled.div`
 const BBiBBiItem = styled.div<{ url: string }>`
   width: 100%;
   height: 243px;
+
+  background-image: url("../../assets/rectangle.png");
 
   display: flex;
   flex-direction: column;
