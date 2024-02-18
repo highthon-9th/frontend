@@ -42,10 +42,17 @@ const BBiBBiForm = ({ timeCapsule }: IFBBiBBiForm) => {
   };
 
   const handlePostTimeCapsule = () => {
-    mutation.mutate({
-      ...timeCapsule,
-      closeAt: new Date(`${timeText.year}-${timeText.month}-${timeText.day}`),
-    });
+    mutation.mutate(
+      {
+        ...timeCapsule,
+        closeAt: new Date(`${timeText.year}-${timeText.month}-${timeText.day}`),
+      },
+      {
+        onSuccess: () => {
+          navigate("/bbibbi");
+        },
+      }
+    );
   };
 
   return (
