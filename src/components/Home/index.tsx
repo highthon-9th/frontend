@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import Logo from "../../assets/Logo";
 
-export const AuthBlackButton = styled.div`
+export const AuthBlackButton = styled.button`
   width: 358px;
   height: 51px;
   display: flex;

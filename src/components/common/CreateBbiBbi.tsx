@@ -20,8 +20,6 @@ const CreateBbiBbi = ({ setTimeCapsule, timeCapsule }: IFCreateBbiBbiProps) => {
   const [imageURL, setImageURL] = useState<string>("");
   const navigate = useNavigate();
 
-  const userName = localStorage.getItem("userName");
-
   const postInfoIsValid = Boolean(timeCapsule.content && timeCapsule.title);
 
   const handleChangePostContent = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -41,7 +39,7 @@ const CreateBbiBbi = ({ setTimeCapsule, timeCapsule }: IFCreateBbiBbiProps) => {
   };
 
   const handleBackPage = () => {
-    navigate("/select-time");
+    navigate("/bbibbi");
   };
 
   useEffect(() => {
@@ -112,6 +110,7 @@ const TitleInput = styled.input`
   color: #333;
   border: none;
   outline: none;
+  margin-top: 24px;
   margin-bottom: 24px;
 
   &::placeholder {
