@@ -1,9 +1,13 @@
 import React from "react";
 import { styled } from "styled-components";
 import TopNavigation from "../../common/TopNavigation";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, useParams } from "react-router-dom";
+import { useGetTimeCapsuleById } from "../../../query/time-capsule";
+import dayjs from "dayjs";
 const BBiBBiDetail = () => {
+  const query = useParams();
+  const { data } = useGetTimeCapsuleById(Number(query.id));
+
   const navigate = useNavigate();
   const handlePrev = () => {
     navigate("/bbibbi");
@@ -12,14 +16,12 @@ const BBiBBiDetail = () => {
     <>
       <TopNavigation prevPage={handlePrev} />
       <Container>
-        <BBiBBiDate>2023년 1월13일</BBiBBiDate>
-        <Title>안녕? 과거에 나에게 </Title>
-        <Content>
-          안녕..?이 삐삐를 보고 있을 때 쯤에는 대학교에 들어가서 여자친구를
-          사귀고 행복한 연애를 하고 있겠지..?🥲 여자 친구는 어때?😚 내
-          여자친구니까 엄청 예쁘지?? 😁
-        </Content>
-        <Iamge1 />
+        <BBiBBiDate>
+          {dayjs(data?.closeAt).format("YYYY년 MM월 DD일")}
+        </BBiBBiDate>
+        <Title>{data?.title} </Title>
+        <Content>{data?.content}</Content>
+        {data?.imageList[0] && <Iamge1 src={data?.imageList[0]} />}
       </Container>
     </>
   );
