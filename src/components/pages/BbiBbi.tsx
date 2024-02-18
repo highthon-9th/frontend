@@ -2,12 +2,12 @@ import { useState } from "react";
 import styled from "styled-components";
 import CreateBbiBbi from "../common/CreateBbiBbi";
 import { useSearchParams } from "react-router-dom";
+import BBiBBiForm from "../BBiBBi/BBiBBiForm";
 
 export interface IFTimeCapsule {
   userId: number;
   title: string;
   content: string;
-  closeAt: Date;
   imageList: string[];
 }
 
@@ -16,9 +16,8 @@ const BbiBbi = () => {
   const [timeCapsule, setTimeCapsule] = useState<IFTimeCapsule>({
     title: "",
     content: "",
-    closeAt: new Date(),
     imageList: [],
-    userId: 0,
+    userId: Number(localStorage.getItem("userId")),
   });
 
   return (
@@ -28,6 +27,9 @@ const BbiBbi = () => {
           timeCapsule={timeCapsule}
           setTimeCapsule={setTimeCapsule}
         />
+      )}
+      {searchParam.get("timeCapsuleQuery") === "time" && (
+        <BBiBBiForm timeCapsule={timeCapsule} />
       )}
     </StyledWrapper>
   );

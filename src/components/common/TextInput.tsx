@@ -5,10 +5,18 @@ import { styled } from "styled-components";
 interface IFTextInputProps {
   inputInfo?: string;
   name?: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  length?: number;
 }
 
-const TextInput = ({ inputInfo, name, onChange }: IFTextInputProps) => {
+const TextInput = ({
+  inputInfo,
+  name,
+  onChange,
+  placeholder,
+  length,
+}: IFTextInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -27,6 +35,8 @@ const TextInput = ({ inputInfo, name, onChange }: IFTextInputProps) => {
         onChange={onChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        placeholder={placeholder}
+        maxLength={length}
       />
     </Container>
   );
@@ -54,5 +64,10 @@ const Input = styled.input`
   border: 1px solid #70757d;
   &:focus {
     border: 1px solid #ff8127;
+  }
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    color: #70757d;
   }
 `;
