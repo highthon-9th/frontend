@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
-import { useGetListQuery } from "../../../query/list/query";
+import {
+  useGetListQuery,
+  useLikeListMutation,
+} from "../../../query/list/query";
 import Like from "../../../assets/Like";
-import { FaRegHeart } from "react-icons/fa";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 interface Props {
   date: number;
@@ -10,6 +13,8 @@ interface Props {
 
 const ListItem = ({ date }: Props) => {
   const { data } = useGetListQuery(date);
+  const mutation = useLikeListMutation();
+  const [like, setLike] = useState(false);
 
   return (
     <>
@@ -19,7 +24,29 @@ const ListItem = ({ date }: Props) => {
           <Content>{data.content}</Content>
           {data.imageUrl !== "" && <ListImage alt="" src={data.imageUrl} />}
           <Flex>
-            <FaRegHeart style={{ cursor: "pointer" }} />
+            {like ? (
+              <FaHeart
+                onClick={() =>
+                  mutation.mutate(data.id, {
+                    onSuccess: () => {
+                      setLike(false);
+                    },
+                  })
+                }
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <FaRegHeart
+                onClick={() =>
+                  mutation.mutate(data.id, {
+                    onSuccess: () => {
+                      setLike(true);
+                    },
+                  })
+                }
+                style={{ cursor: "pointer" }}
+              />
+            )}
             <LikeCount>{data.likeCount}</LikeCount>
           </Flex>
         </ListContainer>

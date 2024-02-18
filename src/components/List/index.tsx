@@ -18,7 +18,7 @@ const List = () => {
             return (
               <>
                 <YearBox
-                  key={year} // Add a unique key prop
+                  key={year}
                   year={year}
                   onClick={() => setYearData(year)}
                   isSelect={year === yearData ? true : false}
