@@ -37,7 +37,7 @@ const Signup = () => {
         <Success />
       ) : (
         <>
-          <TopNavigation prevPage={() => navigate("/")} />
+          <TopNavigation prevPage={() => navigate("/")} onClick={() => {}} />
           <Container>
             <Wrap>
               <Title>아이디를 입력해주세요</Title>
